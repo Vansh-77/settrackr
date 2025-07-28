@@ -10,11 +10,11 @@ const workoutSchema = new mongoose.Schema({
             type: String,
             required: true
         },
-        exerciseId: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Exercise",
-            required: true
-        },
+        // exerciseId: {
+        //     type: mongoose.Schema.Types.ObjectId,
+        //     ref: "Exercise",
+        //     required: true
+        // },
         note: {
             type: String,
         },
