@@ -8,6 +8,7 @@ const app = express();
 
 app.use("/auth", AuthRoutes);
 app.use("/routine",RoutineRoutes)
+app.use("/workout",WorkoutRoutes)
 
 
 app.listen(process.env.PORT , ()=>{
