@@ -16,10 +16,6 @@ export const registor = async (req ,res) => {
             return res.status(400).json({message:"Password must be at least 8 characters"})
         }
         const existingEmail = await User.findOne({ email });
-        const existingUser = await User.findOne({ username });
-        if (existingUser) {
-            return res.status(400).json({ message: "Username already exists" });
-        }
         if (existingEmail) {
             return res.status(400).json({ message: "Email already exists" });
         }
