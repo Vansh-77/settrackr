@@ -8,7 +8,7 @@ function generatetoken(id){
 
 export const registor = async (req ,res) => {
     try {
-        const {email , username , password , gender , age}= req.body;
+        const {email , username , password , gender , dob}= req.body;
         if(!email || !username || !password || !gender || !age){
             return res.status(400).json({message:"Please fill all fields"})
         }
@@ -24,7 +24,7 @@ export const registor = async (req ,res) => {
             username,
             password,
             gender,
-            age
+            dob
         })
         await user.save();
         const token = generatetoken(user._id);
@@ -35,7 +35,7 @@ export const registor = async (req ,res) => {
                 email,
                 username,
                 gender,
-                age
+                dob
             }
         })  
     } catch (error) {

@@ -18,8 +18,8 @@ const userSchema = new mongoose.Schema({
     gender:{
         type:String,
     },
-    age:{
-        type:Number,
+    dob:{
+        type:Date,
     }
      
 },{timestamps:true});
