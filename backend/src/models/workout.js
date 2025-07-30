@@ -1,6 +1,11 @@
 import mongoose from "mongoose";
 
 const workoutSchema = new mongoose.Schema({
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: true
+    },
     WorkoutName: {
         type: String,
         required: true,
@@ -40,4 +45,4 @@ const workoutSchema = new mongoose.Schema({
     },
 }, { timestamps: true })
 
-export const Workout = new mongoose.model("Workout",workoutSchema);
+export const Workout = new mongoose.model("Workout", workoutSchema);
