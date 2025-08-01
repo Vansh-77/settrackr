@@ -1,4 +1,5 @@
 import express from "express"
+import cors from "cors"
 import "dotenv/config"
 import AuthRoutes from "./routes/auth.routes.js"
 import RoutineRoutes from "./routes/routine.routes.js"
@@ -6,6 +7,7 @@ import WorkoutRoutes from "./routes/workout.routes.js"
 import { ConnectDB } from "./config/db.js";
 
 const app = express();
+app.use(cors());
 
 app.use("/auth", AuthRoutes);
 app.use("/routine",RoutineRoutes)
